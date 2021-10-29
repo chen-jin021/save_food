@@ -1,36 +1,31 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(___TODO__: your project name_)
-
-# Shoppy Shoperson 
+# Pomodoro Clock
 
 ## Overview
 
-(___TODO__: a brief one or two paragraph, high-level description of your project_)
+Pomodoro Clock provides a countdown clock with concise user interface of which ensures efficient focusing countdowns of around 25 minutes with a 5 minutes break.
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+Pomodoro Clock is a web app that will allow users to customize countdown ranging up to 25 minutes with a five-minute break by incorporating the Pomodoro technique.
 
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+It will also provide a summary of the user's activity summary.
 
+This web app incorporates the time management method invented by Francesco Cirillo in the 80s.
 
 ## Data Model
 
-(___TODO__: a description of your application's data and their relationships to each other_) 
+The application will store Users, FocusTime and Theme, hash, Items
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(___TODO__: sample documents_)
+* users can set their preference for the theme of their pomodoro clock
+* each user has a tracked focus time for their accumulated working hours
+* hash for each user's password authentication
+* each FocusTime can have multiple items (by embedding)
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "chenJ",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  FocusTime: // an array reference
 }
 ```
 
@@ -39,41 +34,36 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  name: "Breakfast foods",
   items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+    { start: "20130623T13:22-0500", set: 25, shortBreak: true},
+    { start: "20140623T13:22-0500", set: 10, shortBreak: true},
+  ]
 }
 ```
 
-
 ## [Link to Commented First Draft Schema](db.js) 
-
-(___TODO__: create a first draft of your Schemas in db.js and link to it_)
 
 ## Wireframes
 
-(___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
+/signup - page for user log in
 
-/list/create - page for creating a new shopping list
+![signup_page](documentation/sign_up.png)
 
-![list create](documentation/list-create.png)
+/clock - page for showing the pomodoro countdown
 
-/list - page for showing all shopping lists
+![authentication_page](documentation/authen.png)
 
-![list](documentation/list.png)
+/clock - page for showing the pomodoro countdown
 
-/list/slug - page for showing specific shopping list
+![clock_wireframe](documentation/clock.png)
 
-![list](documentation/list-slug.png)
+/clock/stat
+
+![list](documentation/stat.png)
 
 ## Site map
 
-(___TODO__: draw out a site map that shows how pages are related to each other_)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![sitemap](documentation/sitemap.png)
 
 ## User Stories or Use Cases
 
@@ -81,10 +71,9 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+3. as a user, I can use Pomodoro Clock timer and pause
+4. as a user, I can view my countdown process through a process bar
+5. as a user, I can view all of my past statistics
 
 ## Research Topics
 
@@ -99,8 +88,9 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
     * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
     * if you put in a number that's greater than 5, an error message will appear in the dom
 * (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
-
+    * used vue.js as the frontend framework;
+* (2 points) Use a CSS framework for my site
+    * use Boostrap to create the styling for all the Pomodoro Sites
 10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
 
 
