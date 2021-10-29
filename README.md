@@ -25,6 +25,7 @@ An Example User:
 {
   username: "chenJ",
   hash: // a password hash,
+  theme: //dark or light themed
   FocusTime: // an array reference
 }
 ```
