@@ -45,11 +45,11 @@ An Example List with Embedded Items:
 
 ## Wireframes
 
-/signup - page for user log in
+/ - page for user signup (can have access to the log in page)
 
 ![signup_page](documentation/sign_up.png)
 
-/clock - page for showing the pomodoro countdown
+/login - page for showing the pomodoro countdown
 
 ![authentication_page](documentation/authen.png)
 

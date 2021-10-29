@@ -1,0 +1,9 @@
+/* main.css */
+@font-face{
+    font-family: lequire;
+    src: url("fonts/Lequire.otf");
+}
+
+body {
+    font-family: lequire;
+}
