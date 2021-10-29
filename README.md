@@ -77,21 +77,16 @@ An Example List with Embedded Items:
 
 ## Research Topics
 
-(___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
-
 * (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
+    * using passport for user authentication
+    * account has been made for testing
     * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
     * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework;
+* (5 points) react.js
+    * used react.js as the frontend framework;
 * (2 points) Use a CSS framework for my site
     * use Boostrap to create the styling for all the Pomodoro Sites
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
+10 points total out of 8 required points
 
 
 ## [Link to Initial Main Project File](app.js) 
