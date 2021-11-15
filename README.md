@@ -1,4 +1,4 @@
-git # Zanyo Company Website
+# Zanyo Company Website
 
 ## Overview
 
