@@ -28,7 +28,10 @@
     "axios": "^0.24.0",
     "concurrently": "^6.4.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0",
+    "regex": "^0.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

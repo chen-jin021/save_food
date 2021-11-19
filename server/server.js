@@ -1,24 +1,42 @@
 const express = require("express");
 const app = express();
+
 const cors = require("cors");
+const mongoose = require("mongoose");
+const morgan = require("morgan");
+const path = require("path");
 
-const port = 5000;
+const routes = require("../routes/api");
 
+/**
+ * username: cj1231
+ * password: shanghai
+ */
+const MONGODB_URI =
+  "mongodb+srv://cj1231:shanghai@companycluster.i9rsx.mongodb.net/CompanyCluster?retryWrites=true&w=majority";
+
+mongoose.connect(MONGODB_URI || "mongodb://localhost/zanyoDb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+//check if mongoose has been sucessfully connected
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected!!!");
+});
+
+const PORT = process.env.PORT || 8080;
+
+//specifiy cors path
 app.use(
   cors({
-    origin: `http://localhost:${port}`,
+    origin: `http://localhost:${PORT}`,
   })
 );
 
-//creating the home page
-app.get("/api/customers", (req, res) => {
-  const customer = [
-    { id: 1, firstName: "John", lastname: "Doe" },
-    { id: 2, firstName: "Steve", lastname: "Smith" },
-    { id: 3, firstName: "Mary", lastname: "Swamthon" },
-  ];
+//used for HTTP logger
+app.use(morgan("tiny"));
 
-  res.json(customer);
-});
+app.use("/", routes);
 
-app.listen(port, () => console.log(`Server started on port: ${port}`));
+app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
