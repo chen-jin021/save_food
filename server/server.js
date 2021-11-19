@@ -1,10 +1,17 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const port = 5000;
 
+app.use(
+  cors({
+    origin: `http://localhost:${port}`,
+  })
+);
+
 //creating the home page
-app.get("/", (req, res) => {
+app.get("/api/customers", (req, res) => {
   const customer = [
     { id: 1, firstName: "John", lastname: "Doe" },
     { id: 2, firstName: "Steve", lastname: "Smith" },

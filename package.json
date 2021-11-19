@@ -1,34 +1,5 @@
 {
-  "name": "zanyo",
-  "version": "1.0.0",
-  "description": "zanyo company website",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nyu-csci-ua-0467-001-fall-2021/chen-jin021-final-project.git"
-  },
-  "keywords": [
-    "nodejs",
-    "javascript",
-    "react"
-  ],
-  "author": "Chen Jin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nyu-csci-ua-0467-001-fall-2021/chen-jin021-final-project/issues"
-  },
-  "homepage": "https://github.com/nyu-csci-ua-0467-001-fall-2021/chen-jin021-final-project#readme",
   "dependencies": {
-    "concurrently": "^6.4.0",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "prettier": "^2.4.1"
   }
 }
