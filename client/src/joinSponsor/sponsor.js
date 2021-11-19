@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./signUp.css";
+import "./sponsor.css";
 
-class SignUp extends Component {
+class Sponsor extends Component {
   state = {
     name: "",
     email: "",
@@ -13,6 +13,18 @@ class SignUp extends Component {
     const { name, value } = target;
 
     this.setState({ [name]: value });
+  };
+
+  getCustomerName = () => {
+    axios
+      .get("/api/name")
+      .then((res) => {
+        const data = res.data;
+        this.setState({ customers: data });
+      })
+      .catch(() => {
+        alert("Error retrieving data");
+      });
   };
 
   submit = (e) => {
@@ -31,8 +43,12 @@ class SignUp extends Component {
     })
       .then(() => {
         console.log("data has been sent to the server");
+        alert(
+          "You have joined the sponsorlist, refresh the page to see updates."
+        );
         // to clear the previous inputs
         this.setState({ name: "", phone: "", email: "" });
+        this.getCustomerName();
       })
       .catch(() => {
         console.log("internal server error");
@@ -42,6 +58,8 @@ class SignUp extends Component {
     console.log("State:", this.state);
     return (
       <div>
+        <h1>Join Sponsor List</h1>
+
         <form onSubmit={this.submit}>
           <label>
             Name:
@@ -82,4 +100,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default Sponsor;

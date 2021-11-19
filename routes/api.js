@@ -38,7 +38,6 @@ router.get("/name", (req, res) => {
   User.find({})
     .then((data) => {
       console.log("Data", data);
-      //send the 'data' to the browser
       res.json(data);
     })
     .catch((err) => {
