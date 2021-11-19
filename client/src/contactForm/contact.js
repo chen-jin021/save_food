@@ -24,6 +24,10 @@ class Contact extends Component {
       });
   };
 
+  componentDidMount = () => {
+    this.getCustomerMessage();
+  };
+
   handleChange = ({ target }) => {
     const { name, value } = target;
 
