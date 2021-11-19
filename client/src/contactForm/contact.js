@@ -5,7 +5,23 @@ import "./contact.css";
 class Contact extends Component {
   state = {
     name: "",
+    email: "",
+    phone: "",
     message: "",
+    comments: [],
+  };
+
+  getCustomerMessage = () => {
+    axios
+      .get("/api/name")
+      .then((res) => {
+        const data = res.data;
+        this.setState({ comments: data });
+        console.log("data has been received");
+      })
+      .catch(() => {
+        alert("Error retrieving data");
+      });
   };
 
   handleChange = ({ target }) => {
@@ -14,22 +30,12 @@ class Contact extends Component {
     this.setState({ [name]: value });
   };
 
-  //   getCustomerMessage = () => {
-  //     axios
-  //       .get("/api/name")
-  //       .then((res) => {
-  //         const data = res.data;
-  //         this.setState({ customers: data });
-  //       })
-  //       .catch(() => {
-  //         alert("Error retrieving data");
-  //       });
-  //   };
-
   submit = (e) => {
     e.preventDefault();
     const payload = {
       name: this.state.name,
+      phone: this.state.phone,
+      email: this.state.email,
       message: this.state.message,
     };
 
@@ -42,11 +48,11 @@ class Contact extends Component {
       .then(() => {
         console.log("data has been sent to the server");
         alert(
-          "You have joined the sponsorlist, refresh the page to see updates."
+          "Your comment has been documented, refresh the page to see updates."
         );
         // to clear the previous inputs
-        this.setState({ name: "", phone: "", email: "" });
-        this.getCustomerName();
+        this.setState({ name: "", phone: "", email: "", message: "" });
+        this.getCustomerMessage();
       })
       .catch(() => {
         console.log("internal server error");
@@ -54,6 +60,7 @@ class Contact extends Component {
   };
 
   render() {
+    console.log("Comment List:", this.state);
     return (
       <div id="wrap">
         <div id="banner">
@@ -67,7 +74,7 @@ class Contact extends Component {
           {/* form has two methods: 1) post 2)get */}
           {/* here action="contact.html" will allow data captured through this form to send to the contact page (contact.html) */}
           {/* Since the get method reveals all info captured, we don't use get for bank account info, etc. */}
-          <form action="contact.html" method="post">
+          <form onSubmit={this.submit}>
             {/* use a table here to layout a form */}
             <table border={1}>
               <tbody>
@@ -127,20 +134,19 @@ class Contact extends Component {
                     </p>
                   </td>
                 </tr>
-                <tr>
-                  <td colSpan={2}>
-                    <h3>
-                      If you would like to make an appointment, choose the days
-                      below:
-                    </h3>
-                  </td>
-                </tr>
 
                 {/* This table row is for text messages: */}
                 <tr>
-                  <td>To Leave a Message:</td>
+                  <td>To Leave a Comment about Us:</td>
                   <td>
-                    <textarea name="msg" rows={8} cols={80} defaultValue={""} />
+                    <textarea
+                      placeholder="Enter comment"
+                      name="message"
+                      cols="30"
+                      rows="10"
+                      value={this.state.message}
+                      onChange={this.handleChange}
+                    ></textarea>
                   </td>
                 </tr>
                 {/* now, we want to add some buttons */}
@@ -170,6 +176,14 @@ class Contact extends Component {
             />
           </div>
         </footer>
+        <div>
+          <h1> View Our Comments:</h1>
+          <ul>
+            {this.state.comments.map((comment) => (
+              <li>{comment.message}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

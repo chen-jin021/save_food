@@ -11,7 +11,7 @@ const MONGODB_URI =
   "mongodb+srv://cj1231:shanghai@companycluster.i9rsx.mongodb.net/CompanyCluster?retryWrites=true&w=majority";
 
 //for deployment: process.env.MONGODB_URI
-mongoose.connect(MONGODB_URI || "mongodb://localhost/zanyoDb", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/zanyoDb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
