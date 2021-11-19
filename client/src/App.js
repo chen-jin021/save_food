@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import Customers from "./customers/customers";
+import SignUp from "./signUp/signUp";
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
           <h1 className="App-title">React Express Starter</h1>
         </header>
         <Customers />
+        <SignUp />
       </div>
     );
   }

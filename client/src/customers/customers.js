@@ -10,10 +10,20 @@ class Customers extends Component {
     };
   }
 
+  getCustomerName = () => {
+    axios
+      .get("/api/name")
+      .then((res) => {
+        const data = res.data;
+        this.setState({ customers: data });
+      })
+      .catch(() => {
+        alert("Error retrieving data");
+      });
+  };
+
   componentDidMount = () => {
-    axios.get("/api/customers").then((res) => {
-      this.setState({ customers: res.data });
-    });
+    this.getCustomerName();
   };
 
   render() {
@@ -22,7 +32,7 @@ class Customers extends Component {
         <h2>Customers</h2>
         <ul>
           {this.state.customers.map((customer) => (
-            <li key={customer.id}>{customer.firstName}</li>
+            <li key={customer.id}>{customer.name}</li>
           ))}
         </ul>
       </div>
