@@ -1,0 +1,14 @@
+@font-face {
+  font-family: lequire;
+  src: url(../fonts/Lequire.otf);
+}
+#mainArea {
+  margin-top: 70px;
+}
+
+#intro {
+  font-family: lequire;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  padding: 70px;
+}

@@ -23,35 +23,6 @@ body {
   background-size: cover;
 }
 
-/* might be in use for navbar */
-nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  border: 1px black solid;
-  font-size: 18px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-nav ul a {
-  font-family: pix;
-  padding: 10px;
-  border: 1px gray solid;
-  flex-grow: 1;
-  text-decoration: none;
-}
-
-nav ul a:visited,
-nav ul a:hover,
-nav ul a:link {
-  color: #533f28;
-}
-
-nav ul a:focus,
-nav ul a:active {
-  color: orange;
-}
-
 #mainArea {
   background-color: rgba(255, 255, 255, 0.5);
   font-family: lequire;
@@ -61,10 +32,24 @@ nav ul a:active {
 
 table {
   margin: 0 auto;
+  padding: 20px;
+  display: table;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: red;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
 }
 table tr td {
   align-items: center;
   padding: 10px;
+  border-color: gray;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
 }
 table tr td img {
   width: 30vw;

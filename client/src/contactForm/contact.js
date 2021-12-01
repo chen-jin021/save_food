@@ -3,7 +3,6 @@ import axios from "axios";
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
-import company_logo from "./images/logo.png";
 
 class Contact extends Component {
   state = {
@@ -70,9 +69,6 @@ class Contact extends Component {
     console.log("Comment List:", this.state);
     return (
       <div id="wrap">
-        <div>
-          <img src={company_logo} height="150px" alt="company logo" />
-        </div>
         <div id="banner">
           <h1>To Contact Us:</h1>
         </div>
@@ -81,91 +77,85 @@ class Contact extends Component {
             If you would like to contact Zanyo, you are welcome to send me
             messages through the form below:
           </p>
-          {/* form has two methods: 1) post 2)get */}
-          {/* here action="contact.html" will allow data captured through this form to send to the contact page (contact.html) */}
-          {/* Since the get method reveals all info captured, we don't use get for bank account info, etc. */}
           <form onSubmit={this.submit}>
             {/* use a table here to layout a form */}
-            <table border={1}>
-              <tbody>
-                <tr>
-                  <td>Your Name:</td>
-                  <td>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="enter name"
-                      value={this.state.name}
-                      onChange={this.handleChange}
-                    />
-                  </td>
-                </tr>
+            <table>
+              <tr>
+                <td>Your Name:</td>
+                <td>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="enter name"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                  />
+                </td>
+              </tr>
 
-                <tr>
-                  <td>Your Email:</td>
-                  <td>
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="email address"
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                    />
-                  </td>
-                </tr>
+              <tr>
+                <td>Your Email:</td>
+                <td>
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="email address"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                  />
+                </td>
+              </tr>
 
-                <tr>
-                  <td>Your Phone:</td>
-                  <td>
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder="contact phone"
-                      value={this.state.phone}
-                      onChange={this.handleChange}
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>We'll be in touch soon</p>
-                    <p>
-                      We aim to respond within 24 hours, however, during busy
-                      periods like holidays, sales and special campaigns we may
-                      take a little longer getting back to you. Want to get in
-                      touch with our teams? Scroll down for more details.
-                    </p>
-                  </td>
-                  <td>
-                    <p>Call us</p>
-                    <p>
-                      We're available Monday to Friday 08:00 - 21:00 EST and
-                      Saturday to Sunday 09:00 - 20:00 EST.
-                    </p>
-                  </td>
-                </tr>
+              <tr>
+                <td>Your Phone:</td>
+                <td>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="contact phone"
+                    value={this.state.phone}
+                    onChange={this.handleChange}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>We'll be in touch soon</p>
+                  <p>
+                    We aim to respond within 24 hours, however, during busy
+                    periods like holidays, sales and special campaigns we may
+                    take a little longer getting back to you. Want to get in
+                    touch with our teams? Scroll down for more details.
+                  </p>
+                </td>
+                <td>
+                  <p>Call us</p>
+                  <p>
+                    We're available Monday to Friday 08:00 - 21:00 EST and
+                    Saturday to Sunday 09:00 - 20:00 EST.
+                  </p>
+                </td>
+              </tr>
 
-                {/* This table row is for text messages: */}
-                <tr>
-                  <td>To Leave a Comment about Us:</td>
-                  <td>
-                    <textarea
-                      placeholder="Enter comment"
-                      name="message"
-                      cols="30"
-                      rows="10"
-                      value={this.state.message}
-                      onChange={this.handleChange}
-                    ></textarea>
-                  </td>
-                </tr>
-                {/* now, we want to add some buttons */}
-                <tr>
-                  <td colSpan={2}>
-                    <input type="submit" name="Submit Form" />
-                  </td>
-                </tr>
-              </tbody>
+              {/* This table row is for text messages: */}
+              <tr>
+                <td>To Leave a Comment about Us:</td>
+                <td>
+                  <textarea
+                    placeholder="Enter comment"
+                    name="message"
+                    cols="60"
+                    rows="10"
+                    value={this.state.message}
+                    onChange={this.handleChange}
+                  ></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td colSpan={2}>
+                  <input type="submit" name="Submit Form" />
+                </td>
+              </tr>
             </table>
           </form>
         </div>
