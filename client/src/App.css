@@ -33,7 +33,7 @@ nav ul {
   display: flex;
   padding: 0;
   border: 1px black solid;
-  font-size: 18px;
+  font-size: 15px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -48,6 +48,6 @@ nav ul a {
 .navbar-brand,
 .nav-link {
   font-family: lequire;
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 70px;
 }
