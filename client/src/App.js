@@ -41,7 +41,7 @@ class App extends Component {
         </div>
         <div id="body">
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Contact />} />
             <Route path="/sponsor" element={<Customers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/comments" element={<Comments />} />
