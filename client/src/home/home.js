@@ -5,7 +5,6 @@ import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 
 class Home extends Component {
   render() {
-    console.log("Comment List:", this.state);
     return (
       <div id="wrap">
         <div id="banner"></div>

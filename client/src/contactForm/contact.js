@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./contact.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 
 class Contact extends Component {
   state = {
@@ -10,24 +8,6 @@ class Contact extends Component {
     email: "",
     phone: "",
     message: "",
-    comments: [],
-  };
-
-  getCustomerMessage = () => {
-    axios
-      .get("/api/name")
-      .then((res) => {
-        const data = res.data;
-        this.setState({ comments: data });
-        console.log("data has been received");
-      })
-      .catch(() => {
-        alert("Error retrieving data");
-      });
-  };
-
-  componentDidMount = () => {
-    this.getCustomerMessage();
   };
 
   handleChange = ({ target }) => {
@@ -42,7 +22,6 @@ class Contact extends Component {
       name: this.state.name,
       phone: this.state.phone,
       email: this.state.email,
-      message: this.state.message,
     };
 
     //to send the data
@@ -57,8 +36,7 @@ class Contact extends Component {
           "Your comment has been documented, refresh the page to see updates."
         );
         // to clear the previous inputs
-        this.setState({ name: "", phone: "", email: "", message: "" });
-        this.getCustomerMessage();
+        this.setState({ name: "", phone: "", email: "" });
       })
       .catch(() => {
         console.log("internal server error");
@@ -66,16 +44,15 @@ class Contact extends Component {
   };
 
   render() {
-    console.log("Comment List:", this.state);
     return (
       <div id="wrap">
         <div id="banner">
-          <h1>To Contact Us:</h1>
+          <h1>Contact Us to Become a Sponsor:</h1>
         </div>
         <div id="mainArea" className="contact">
           <p>
-            If you would like to contact Zanyo, you are welcome to send me
-            messages through the form below:
+            If you would like to contact Zanyo and be a sponsor, you are welcome
+            to send me messages through the form below:
           </p>
           <form onSubmit={this.submit}>
             {/* use a table here to layout a form */}
@@ -137,20 +114,6 @@ class Contact extends Component {
                 </td>
               </tr>
 
-              {/* This table row is for text messages: */}
-              <tr>
-                <td>To Leave a Comment about Us:</td>
-                <td>
-                  <textarea
-                    placeholder="Enter comment"
-                    name="message"
-                    cols="60"
-                    rows="10"
-                    value={this.state.message}
-                    onChange={this.handleChange}
-                  ></textarea>
-                </td>
-              </tr>
               <tr>
                 <td colSpan={2}>
                   <input type="submit" name="Submit Form" />
@@ -158,14 +121,6 @@ class Contact extends Component {
               </tr>
             </table>
           </form>
-        </div>
-        <div>
-          <h1> View Our Comments:</h1>
-          <ul>
-            {this.state.comments.map((comment) => (
-              <li>{comment.message}</li>
-            ))}
-          </ul>
         </div>
       </div>
     );

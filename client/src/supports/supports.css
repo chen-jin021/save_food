@@ -53,16 +53,3 @@ table tr td img {
   font-family: pix;
   color: #424c76;
 }
-
-#view-comments {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-#view-comments h1,
-#view-comments ul li {
-  font-family: lequire;
-  font-size: 1.3rem;
-  line-height: 2rem;
-  border-bottom: 1px dotted #777;
-  text-align: center;
-}

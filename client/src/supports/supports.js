@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./comments.css";
+import "./supports.css";
 
-class Comments extends Component {
+class Supports extends Component {
   state = {
-    comments: [],
+    texts: [],
   };
 
   getCustomerMessage = () => {
     axios
-      .get("/api/comment")
+      .get("/api/support")
       .then((res) => {
         const data = res.data;
-        this.setState({ comments: data });
+        this.setState({ texts: data });
         console.log("data has been received");
       })
       .catch(() => {
@@ -32,12 +32,12 @@ class Comments extends Component {
   submit = (e) => {
     e.preventDefault();
     const payload = {
-      message: this.state.message,
+      support: this.state.support,
     };
 
     //to send the data
     axios({
-      url: "/api/savecomment",
+      url: "/api/savesupport",
       method: "POST",
       data: payload,
     })
@@ -47,7 +47,7 @@ class Comments extends Component {
           "Your comment has been documented, refresh the page to see updates."
         );
         // to clear the previous inputs
-        this.setState({ message: "" });
+        this.setState({ texts: "" });
         this.getCustomerMessage();
       })
       .catch(() => {
@@ -60,12 +60,12 @@ class Comments extends Component {
     return (
       <div id="wrap">
         <div id="banner">
-          <h1>Comment List:</h1>
+          <h1>To Request Supports:</h1>
         </div>
         <div id="mainArea" className="contact">
           <p>
-            If you would like to contact Zanyo, you are welcome to send me
-            messages through the form below:
+            If you would like to request support from Zanyo, you are welcome to
+            send me messages through the form below:
           </p>
           <form onSubmit={this.submit}>
             {/* use a table here to layout a form */}
@@ -76,10 +76,10 @@ class Comments extends Component {
                 <td>
                   <textarea
                     placeholder="Enter comment"
-                    name="message"
+                    name="support"
                     cols="60"
                     rows="10"
-                    value={this.state.message}
+                    value={this.state.support}
                     onChange={this.handleChange}
                   ></textarea>
                 </td>
@@ -92,16 +92,9 @@ class Comments extends Component {
             </table>
           </form>
         </div>
-        <div id="view-comments">
-          <h1> View Our Comments:</h1>
-          <ul>
-            {this.state.comments.map((comment) => (
-              <li>{comment.message}</li>
-            ))}
-          </ul>
-        </div>
       </div>
     );
   }
 }
-export default Comments;
+
+export default Supports;

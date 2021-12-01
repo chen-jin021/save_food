@@ -5,6 +5,8 @@ import Customers from "./sponsorList/customers";
 import Contact from "./contactForm/contact";
 import Home from "./home/home";
 import Comments from "./comments/comments";
+import Supports from "./supports/supports";
+
 import company_logo from "./white_logo_transparent_background.png";
 
 //import styling css
@@ -33,7 +35,7 @@ class App extends Component {
               <Nav.Link href="/sponsor">Sponsor List</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
               <Nav.Link href="/comments">Comments</Nav.Link>
-              <Nav.Link href="#pricing">Log in/Sign up</Nav.Link>
+              <Nav.Link href="/supports">Request Supports</Nav.Link>
             </Nav>
           </Navbar>
         </div>
@@ -43,7 +45,7 @@ class App extends Component {
             <Route path="/sponsor" element={<Customers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/comments" element={<Comments />} />
-            {/* TODO: Log in and sign up */}
+            <Route path="/supports" element={<Supports />} />
           </Routes>
         </div>
         <footer>
