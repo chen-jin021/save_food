@@ -1,0 +1,122 @@
+/* import a customized font */
+@font-face {
+  font-family: lequire;
+  src: url(fonts/Lequire.otf);
+}
+/* import another cutsomized font */
+@font-face {
+  font-family: pix;
+  src: url(fonts/ka1.ttf);
+}
+
+#banner {
+  letter-spacing: 10px;
+  font-family: lequire;
+  font-size: 20px;
+}
+
+body {
+  background: url(images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* might be in use for navbar */
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  border: 1px black solid;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+nav ul a {
+  font-family: pix;
+  padding: 10px;
+  border: 1px gray solid;
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+nav ul a:visited,
+nav ul a:hover,
+nav ul a:link {
+  color: #533f28;
+}
+
+nav ul a:focus,
+nav ul a:active {
+  color: orange;
+}
+
+#mainArea {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: lequire;
+  padding: 10px;
+  font-size: 20px;
+}
+
+table {
+  margin: 0 auto;
+}
+table tr td {
+  align-items: center;
+  padding: 10px;
+}
+table tr td img {
+  width: 30vw;
+}
+
+#mainArea h3,
+#map {
+  padding: 20px;
+  font-size: 25px;
+  font-family: pix;
+  color: #424c76;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+footer {
+  display: flex;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.267);
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+  padding: 10px;
+}
+
+.socialMedia {
+  padding-top: 50px;
+  margin-right: 300px;
+}
+
+.socialMedia a:link {
+  color: #2e3438;
+}
+.socialMedia a:hover {
+  color: orange;
+}
+.socialMedia a:active {
+  color: #2e3438;
+}
+.socialMedia a:visited {
+  color: #dde2e3;
+}
+
+#number {
+  margin: 10px;
+  text-decoration: none;
+  font-family: pix;
+  font-size: 20px;
+}

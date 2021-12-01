@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./contact.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
+import company_logo from "./images/logo.png";
 
 class Contact extends Component {
   state = {
@@ -67,6 +70,9 @@ class Contact extends Component {
     console.log("Comment List:", this.state);
     return (
       <div id="wrap">
+        <div>
+          <img src={company_logo} height="150px" alt="company logo" />
+        </div>
         <div id="banner">
           <h1>To Contact Us:</h1>
         </div>
@@ -178,6 +184,12 @@ class Contact extends Component {
               aria-hidden="false"
               tabIndex={0}
             />
+          </div>
+          <div class="socialMedia">
+            <a href="https://www.facebook.com" target="_blank">
+              <FontAwesomeIcon icon={faPhoneSquare} size="6x"></FontAwesomeIcon>
+              <span id="number">+86 137-952-3327</span>
+            </a>
           </div>
         </footer>
         <div>
