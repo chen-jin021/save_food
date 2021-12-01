@@ -1,3 +1,25 @@
+/* import a customized font */
+@font-face {
+  font-family: lequire;
+  src: url(../fonts/Lequire.otf);
+}
+/* import another cutsomized font */
+@font-face {
+  font-family: pix;
+  src: url(../fonts/ka1.ttf);
+}
+
+#sponsor-list {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  padding: 10px;
+  text-align: center;
+  color: indianred;
+  font-family: lequire;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -6,7 +28,10 @@ ul {
 }
 
 li {
+  padding: 10px;
+  font-family: lequire;
   font-size: 1.3rem;
   line-height: 2rem;
   border-bottom: 1px dotted #777;
+  text-align: center;
 }

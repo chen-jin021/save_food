@@ -28,7 +28,7 @@ class Customers extends Component {
 
   render() {
     return (
-      <div>
+      <div id="sponsor-list">
         <h1> View Our Sponsor List</h1>
         <ul>
           {this.state.customers.map((customer) => (

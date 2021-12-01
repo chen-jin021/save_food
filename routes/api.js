@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/db");
+const Comment = require("../models/db");
 
 //have a prefix of '/api'
 router.get("/", (req, res) => {
