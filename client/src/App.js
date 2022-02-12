@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 //import components
-import Customers from "./sponsorList/customers";
 import Contact from "./contactForm/contact";
 import Home from "./home/home";
 import Comments from "./comments/comments";
@@ -32,7 +31,6 @@ class App extends Component {
             />
             <Nav>
               <Nav.Link href="/">About</Nav.Link>
-              <Nav.Link href="/sponsor">Sponsor List</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
               <Nav.Link href="/comments">Comments</Nav.Link>
               <Nav.Link href="/supports">Request Supports</Nav.Link>
@@ -42,7 +40,6 @@ class App extends Component {
         <div id="body">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sponsor" element={<Customers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/comments" element={<Comments />} />
             <Route path="/supports" element={<Supports />} />

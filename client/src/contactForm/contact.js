@@ -51,8 +51,8 @@ class Contact extends Component {
         </div>
         <div id="mainArea" className="contact">
           <p>
-            If you would like to contact Zanyo and be a sponsor, you are welcome
-            to send me messages through the form below:
+            If you would like to contact us and join us, you are welcome to send
+            me messages through the form below:
           </p>
           <form onSubmit={this.submit}>
             {/* use a table here to layout a form */}

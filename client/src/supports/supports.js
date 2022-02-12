@@ -64,7 +64,7 @@ class Supports extends Component {
         </div>
         <div id="mainArea" className="contact">
           <p>
-            If you would like to request support from Zanyo, you are welcome to
+            If you would like to request support from us, you are welcome to
             send me messages through the form below:
           </p>
           <form onSubmit={this.submit}>
